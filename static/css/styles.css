@@ -1,0 +1,206 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color and font styling to the body */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #a9a5a5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Style the topbar */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    height: 50px; /* Adjust the size of the logo as needed */
+}
+
+.topbar h1 {
+    margin: 0;
+}
+
+/* Style the introduction section */
+.intro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    border-radius: 50px;
+    margin: 20px 20px;
+    background-image: url('../images/images.jpg'); /* Adjust path if necessary */
+    background-size: contain; /* Changed to cover */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; /* Ensure overlay covers the whole section */
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Adjust the alpha value for transparency */
+    z-index: 1;
+}
+
+/* Ensure content appears above the overlay */
+.intro-text, .intro-image {
+    position: relative;
+    z-index: 2;
+}
+
+.intro-text {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.intro-text h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-size: 90px;
+}
+
+.scroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: #45a049;
+}
+
+.intro-image {
+    flex: 1;
+    text-align: right;
+}
+
+.intro-image img {
+    max-width: 55%;
+    height: auto; /* Changed to auto */
+    border-radius: 5px;
+    margin-bottom: -60px;
+    padding-top: 0px;
+}
+
+/* Crop Recommendations Heading */
+.crop-recommendations {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 50px;
+    margin: 20px 20px;
+}
+
+.crop-recommendations h2 {
+    color: #4CAF50;
+    font-size: 40px;
+    margin: -20px;
+}
+
+/* Style the form section */
+.form-section {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #4CAF50;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+}
+
+.btn-submit {
+    background: linear-gradient(to right, #2d5032, #4CAF50);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, #45a049, #2d5032);
+}
+
+/* Style the recommended crop section */
+.recommended-crop {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#recommendation h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+#crop-name {
+    font-size: 1.2em;
+    color: #333;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Topbar -->
+    <header>
+        <div class="topbar">
+            <img src="{{ url_for('static', filename='images/Agriculture-Logo-PNG.png') }}" alt="Agriculture Logo" class="logo">
+            <h1>Agriculture Hub</h1>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="intro-text">
+            <h2>Recommender System</h2>
+            <a href="#form-section" class="scroll-button">Go to Form</a>
+        </div>
+        <div class="intro-image">
+            <img src="{{ url_for('static', filename='images/R.png') }}" alt="Agriculture Image">
+        </div>
+    </section>
+
+    <!-- Crop Recommendations Heading -->
+    <section class="crop-recommendations">
+        <h2>Crop Recommendations</h2>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form-section" class="form-section">
+        <h2>Crop Recommendation Form</h2>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="nitrogen">Nitrogen</label>
+                <input type="text" id="nitrogen" name="Nitrogen" placeholder="Enter value for nitrogen">
+            </div>
+            <div class="form-group">
+                <label for="phosphorus">Phosphorus</label>
+                <input type="text" id="phosphorus" name="Phosporus" placeholder="Enter value for phosphorus">
+            </div>
+            <div class="form-group">
+                <label for="potassium">Potassium</label>
+                <input type="text" id="potassium" name="Potassium" placeholder="Enter value for potassium">
+            </div>
+            <div class="form-group">
+                <label for="temperature">Temperature</label>
+                <input type="text" id="temperature" name="Temperature" placeholder="Enter temperature in Celsius">
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity</label>
+                <input type="text" id="humidity" name="Humidity" placeholder="Enter humidity">
+            </div>
+            <div class="form-group">
+                <label for="ph">pH</label>
+                <input type="text" id="ph" name="Ph" placeholder="Enter pH value">
+            </div>
+            <div class="form-group">
+                <label for="rainfall">Rainfall</label>
+                <input type="text" id="rainfall" name="Rainfall" placeholder="Enter rainfall in mm">
+            </div>
+            <button type="submit" class="btn-submit">Submitt</button>
+        </form>
+    </section>
+    
+    <!-- Recommended Crop Section -->
+    <section class="recommended-crop">
+        <div id="recommendation">
+            <h2>Recommended Crop for cultivation is:</h2>
+            <p id="crop-name">{{ result }}</p>
+        </div>
+    </section>
+</body>
+</html>
