@@ -1,19 +1,45 @@
-/* Reset some default browser styling */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply a background color and font styling to the body */
+
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: #a9a5a5;
     color: #333;
     line-height: 1.6;
+    background: #a9a5a5;
+    position: relative;
+    overflow-y: scroll; 
 }
 
-/* Style the topbar */
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/Jpg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+}
+
+
 header {
     background-color: #4CAF50;
     color: white;
@@ -31,14 +57,14 @@ header {
 .logo {
     position: absolute;
     left: 20px;
-    height: 50px; /* Adjust the size of the logo as needed */
+    height: 50px;
 }
 
 .topbar h1 {
     margin: 0;
 }
 
-/* Style the introduction section */
+
 .intro {
     position: relative;
     display: flex;
@@ -47,11 +73,11 @@ header {
     padding: 20px 20px;
     border-radius: 50px;
     margin: 20px 20px;
-    background-image: url('../images/images.jpg'); /* Adjust path if necessary */
-    background-size: contain; /* Changed to cover */
+    background-image: url('../images/images.jpg');
+    background-size: contain; 
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    overflow: hidden; /* Ensure overlay covers the whole section */
+    overflow: hidden; 
 }
 
 .intro::before {
@@ -61,11 +87,11 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8); /* Adjust the alpha value for transparency */
+    background: rgba(0, 0, 0, 0.8); 
     z-index: 1;
 }
 
-/* Ensure content appears above the overlay */
+
 .intro-text, .intro-image {
     position: relative;
     z-index: 2;
@@ -104,13 +130,12 @@ header {
 
 .intro-image img {
     max-width: 55%;
-    height: auto; /* Changed to auto */
+    height: auto; 
     border-radius: 5px;
     margin-bottom: -60px;
     padding-top: 0px;
 }
 
-/* Crop Recommendations Heading */
 .crop-recommendations {
     background-color: #fff;
     padding: 20px;
@@ -126,7 +151,7 @@ header {
     margin: -20px;
 }
 
-/* Style the form section */
+
 .form-section {
     max-width: 600px;
     margin: 50px auto;
@@ -184,7 +209,7 @@ input[type="text"]:focus {
     background: linear-gradient(to right, #45a049, #2d5032);
 }
 
-/* Style the recommended crop section */
+
 .recommended-crop {
     max-width: 600px;
     margin: 50px auto;
